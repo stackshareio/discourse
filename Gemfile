@@ -243,7 +243,6 @@ gem 'rchardet', require: false
 gem 'lz4-ruby', require: false, platform: :mri
 
 if ENV["IMPORT"] == "1"
-  gem 'mysql2'
   gem 'redcarpet'
 
   # NOTE: in import mode the version of sqlite can matter a lot, so we stick it to a specific one
