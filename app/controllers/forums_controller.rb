@@ -9,7 +9,7 @@ class ForumsController < ActionController::Base
   after_action  :add_readonly_header
 
   def status
-    if $shutdown # rubocop:disable Style/GlobalVars
+    if $shutdown
       render plain: "shutting down", status: (params[:shutdown_ok] ? 200 : 500)
     else
       render plain: "ok"

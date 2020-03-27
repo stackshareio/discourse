@@ -4,7 +4,7 @@
 # running it anywhere else will likely fail
 #
 # Environment Variables (specific to this rake task)
-# => SKIP_LINT                 set to 1 to skip linting (eslint and rubocop)
+# => SKIP_LINT                 set to 1 to skip linting (eslint)
 # => SKIP_TESTS                set to 1 to skip all tests
 # => SKIP_CORE                 set to 1 to skip core tests (rspec and qunit)
 # => SKIP_PLUGINS              set to 1 to skip plugin tests (rspec and qunit)
@@ -65,14 +65,12 @@ task 'docker:test' do
       puts "prettier #{`yarn prettier -v`}"
 
       if ENV["SINGLE_PLUGIN"]
-        @good &&= run_or_fail("bundle exec rubocop --parallel plugins/#{ENV["SINGLE_PLUGIN"]}")
         @good &&= run_or_fail("yarn eslint --ext .es6 plugins/#{ENV['SINGLE_PLUGIN']}")
 
         puts "Listing prettier offenses in #{ENV['SINGLE_PLUGIN']}:"
         @good &&= run_or_fail_prettier("plugins/#{ENV['SINGLE_PLUGIN']}/**/*.scss", "plugins/#{ENV['SINGLE_PLUGIN']}/**/*.es6")
       else
         @good &&= run_or_fail("bundle exec rake plugin:update_all") unless ENV["SKIP_PLUGINS"]
-        @good &&= run_or_fail("bundle exec rubocop --parallel") unless ENV["SKIP_CORE"]
         @good &&= run_or_fail("yarn eslint app/assets/javascripts test/javascripts") unless ENV["SKIP_CORE"]
         @good &&= run_or_fail("yarn eslint --ext .es6 app/assets/javascripts test/javascripts plugins") unless ENV["SKIP_PLUGINS"]
 

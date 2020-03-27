@@ -1,9 +1,6 @@
 pre-commit:
   parallel: true
   commands:
-    rubocop:
-      glob: "*.rb"
-      run: bundle exec rubocop {staged_files}
     prettier:
       glob: "*.{js,es6}"
       exclude: "vendor/*|fixtures|public/javascripts|shims.js|ember-addons|template-lintrc|locale/*|test_helper|run-qunit"
@@ -46,8 +43,6 @@ post-rewrite:
 lints:
   parallel: true
   commands:
-    rubocop:
-      run: bundle exec rubocop --parallel
     prettier:
       glob: "{app/assets/stylesheets/**/*.scss,app/assets/javascripts/**/*.es6,test/javascripts/**/*.es6}"
       run: yarn prettier --list-different {all_files}

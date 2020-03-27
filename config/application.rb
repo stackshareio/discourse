@@ -252,7 +252,7 @@ module Discourse
     require 'logster/redis_store'
     # Use redis for our cache
     config.cache_store = DiscourseRedis.new_redis_store
-    $redis = DiscourseRedis.new # rubocop:disable Style/GlobalVars
+    $redis = DiscourseRedis.new
     Logster.store = Logster::RedisStore.new(DiscourseRedis.new)
 
     # we configure rack cache on demand in an initializer

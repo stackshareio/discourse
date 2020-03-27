@@ -120,10 +120,6 @@ jobs:
         if: env.BUILD_TYPE == 'BACKEND' && env.TARGET == 'CORE'
         run: bin/rake parallel:create && bin/rake parallel:migrate
 
-      - name: Rubocop
-        if: env.BUILD_TYPE == 'LINT'
-        run: bundle exec rubocop .
-
       - name: ESLint
         if: env.BUILD_TYPE == 'LINT'
         run: yarn eslint app/assets/javascripts test/javascripts && yarn eslint --ext .es6 app/assets/javascripts test/javascripts plugins

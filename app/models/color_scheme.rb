@@ -2,8 +2,6 @@
 
 class ColorScheme < ActiveRecord::Base
 
-  # rubocop:disable Layout/HashAlignment
-
   CUSTOM_SCHEMES = {
     'Dark': {
       "primary" =>           'dddddd',
@@ -96,8 +94,6 @@ class ColorScheme < ActiveRecord::Base
       "love" =>              'd9b2bb'
     }
   }
-
-  # rubocop:enable Layout/HashAlignment
 
   LIGHT_THEME_ID = 'Light'
 

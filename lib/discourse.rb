@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-# rubocop:disable Style/GlobalVars
 
 require 'cache'
 require 'open3'
@@ -554,7 +553,7 @@ module Discourse
       begin
         git_cmd = 'git rev-parse HEAD'
         self.try_git(git_cmd, Discourse::VERSION::STRING)
-      end # rubocop:disable Style/GlobalVars
+      end
   end
 
   def self.git_branch
@@ -904,5 +903,3 @@ module Discourse
     ENV['RAILS_ENV'] == "test" && ENV['TEST_ENV_NUMBER']
   end
 end
-
-# rubocop:enable Style/GlobalVars

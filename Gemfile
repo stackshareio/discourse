@@ -178,8 +178,6 @@ group :test, :development do
   gem 'rspec-html-matchers'
   gem 'pry-nav'
   gem 'byebug', require: ENV['RM_INFO'].nil?, platform: :mri
-  gem 'rubocop', require: false
-  gem "rubocop-discourse", require: false
   gem 'parallel_tests'
 end
 
