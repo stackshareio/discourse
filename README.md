@@ -10,6 +10,7 @@ Discourse is the 100% open source discussion platform built for the next decade 
 
 To learn more about the philosophy and goals of the project, [visit **discourse.org**](https://www.discourse.org).
 
+
 ## Screenshots
 
 <a href="https://bbs.boingboing.net"><img alt="Boing Boing" src="https://user-images.githubusercontent.com/1681963/52239245-04ad8280-289c-11e9-9c88-8c173d4a0422.png" width="720px"></a>
