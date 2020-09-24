@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 #source 'http://production.cf.rubygems.org'
 
 gem 'bootsnap', require: false, platform: :mri
-gem 'circleci'
+
 def rails_master?
   ENV["RAILS_MASTER"] == '1'
 end
