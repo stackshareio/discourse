@@ -18,7 +18,7 @@ else
   # this allows us to include the bits of rails we use without pieces we do not.
   #
   # To issue a rails update bump the version number here
-  gem 'actionmailer', '6.0.1'
+  gem 'actionmailer', '6.0.5'
   gem 'actionpack', '6.0.1'
   gem 'actionview', '6.0.1'
   gem 'activemodel', '6.0.1'
@@ -66,7 +66,7 @@ gem 'http_accept_language', require: false
 
 # Ember related gems need to be pinned cause they control client side
 # behavior, we will push these versions up when upgrading ember
-gem 'ember-rails', '0.18.5'
+gem 'ember-rails', '0.18.6'
 gem 'discourse-ember-source', '~> 3.12.2'
 gem 'ember-handlebars-template', '0.8.0'
 
@@ -95,7 +95,6 @@ gem 'email_reply_trimmer'
 gem 'discourse_image_optim', require: 'image_optim'
 gem 'multi_json'
 gem 'mustache'
-gem 'nokogiri'
 gem 'css_parser', require: false
 
 gem 'omniauth'
@@ -142,7 +141,6 @@ gem 'addressable'
 # Gems used only for assets and not required in production environments by default.
 # Allow everywhere for now cause we are allowing asset debugging in production
 group :assets do
-  gem 'uglifier'
   gem 'rtlit', require: false # for css rtling
 end
 
@@ -262,4 +260,3 @@ gem 'maxminddb'
 gem 'hashie', '< 4.0.0', require: false # https://github.com/zendesk/zendesk_api_client_rb/pull/422
 gem 'faraday', '< 1.0.0', require: false # https://github.com/zendesk/zendesk_api_client_rb/pull/421
 # sumit testing a new tool addition
-gem 'select2-rails'
